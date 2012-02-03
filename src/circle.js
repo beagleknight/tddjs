@@ -25,11 +25,17 @@ function Sphere(radius) {
   Circle.call(this, radius);
 }
 
-Sphere.inherit(Circle);
+//Sphere.inherit(Circle);
+//
+//Sphere.prototype.area = function() {
+//  return 4 * this._super.area.call(this);
+//};
 
-Sphere.prototype.area = function() {
-  return 4 * this._super.area.call(this);
-};
+Sphere.inherit2(Circle, {
+  area: function() {
+    return 4 * this._super();
+  }
+});
 
 //Sphere.prototype = (function () {
 //  function F() {};
